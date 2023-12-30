@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alleared">
+  <meta name="description" content="This is a Frontendmentor Javascript Junior challenge.">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <img src="images/logo.svg" alt="Logo Image">
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <div class="tip-container">
+        <div class="tip-input-div">
+          <p>Bill</p>
+          <label for="input-bill">
+            <img class="dollar-icon" src="images/icon-dollar.svg" alt="Dollar icon">
+            <input type="text" id="input-bill" placeholder="0" dir="RTL" class="js-input-bill input-bill-field" oninput="validateInput(this)">
+          </label>
+        </div>
+        <div class="tip-percentage-div">
+          <p>Select Tip &percnt;</p>
+          <div class="percentage-div">
+            <button class="percentage-button js-percentage-button" onclick="calculateBill(5);activeButton(this)">5&percnt;</button>
+            <button class="percentage-button js-percentage-button" onclick="calculateBill(10);activeButton(this)">10&percnt;</button>
+            <button class="percentage-button js-percentage-button" onclick="calculateBill(15);activeButton(this)">15&percnt;</button>
+            <button class="percentage-button js-percentage-button" onclick="calculateBill(25);activeButton(this)">25&percnt;</button>
+            <button class="percentage-button js-percentage-button" onclick="calculateBill(50); activeButton(this)">50&percnt;</button>
+            <label for="custom-percentage">
+              <input type="text" id="custom-percentage" class="custom-percentage js-custom-percentage" placeholder="Custom" oninput="validateInput(this)" onkeyup="custom()">
+            </label>
+
+          </div>
+        </div>
+        <div class="number-of-people-div">
+          <div class="number-of-people-title-div">
+            <p>Number of People</p>
+            <p class="cant-be-zero-paragraph"></p>
+          </div>
+          <label for="number-of-people-input">
+            <img src="images/icon-person.svg" alt="Person Icon" class="person-icon">
+            <input type="text" placeholder="" value="1" id="number-of-people-input" dir="RTL" class="js-number-of-people number-of-people-field" oninput="validateInput(this)">
+          </label>
+        </div>
+      </div>
+      <div class="result-container">
+        <div class="result-div">
+          <div class="tip-amount-div">
+            <div class="tip-amount-title">
+              <p>Tip Amount</p>
+              <p class="amount-per-person">&sol; person</p>
+            </div>
+            <div class="total-bill">
+              <span class="js-tip-amount">&dollar;0.00</span>
+            </div>
+          </div>
+          <div class="total-amount-div">
+            <div class="total-amount-title">
+              <p>Total</p>
+              <p class="amount-per-person">&sol; person</p>
+            </div>
+            <div class="total-bill">
+              <span class="js-total-bill">&dollar;0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="reset-button-div">
+          <button onclick="reset()" class="reset-button">RESET</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Alleared</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

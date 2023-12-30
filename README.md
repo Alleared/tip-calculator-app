@@ -1,0 +1,1 @@
+FrontendMentor JavaScript Junior challenge. I was a bit familiarized with this kinda of project, but it was still a challenge to solve it. Any feedback is welcome.

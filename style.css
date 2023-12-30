@@ -1,0 +1,254 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ---------- COLORS --------- */
+  /* Primary color */
+  --STRONG-CYAN: hsl(172, 67%, 45%);
+
+  /* Neutral colors */
+  --VERY-DARK-CYAN: hsl(183, 100%, 15%);
+  --DARK-GRAYISH-CYAN: hsl(186, 14%, 43%);
+  --GRAYISH-CYAN: hsl(184, 14%, 56%);
+  --BACKGROUND-BODY: hsl(185, 41%, 84%);
+  --ERROR-COLOR: rgb(184, 42, 42);
+  --VERY-LIGHT-GRAYISH-CYAN: Hsl(189, 41%, 97%);
+  --WHITE: hsl(0, 0%, 100%);
+
+
+  /* ---------- BORDER RADIUS  ------------- */
+  --BUTTONS-BORDER-RADIUS: 5px;
+  --MAIN-BORDER-RADIUS: 20px;
+
+
+  /* ---------- FONT STYLES --------------- */
+  --FONT-SIZE: 1.3rem;
+  --FONT-FAMILY: 'Space Mono', monospace;
+
+  /* ---------- HOVER STYLES --------------- */
+  --HOVER-TRANSITION: .3s;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: var(--FONT-SIZE) var(--FONT-FAMILY);
+  background-color: var(--BACKGROUND-BODY)
+}
+
+header {
+  margin: 5rem 0 2rem;
+}
+
+article {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--WHITE);
+  color: var(--WHITE);
+  padding: 2rem;
+  border-radius: var(--MAIN-BORDER-RADIUS);
+  max-width: 1100px;
+  margin: 1rem 2rem;
+}
+
+
+/* TIP CONTAINER STYLES */
+.tip-container {
+ color: var(--GRAYISH-CYAN);
+}
+
+.tip-percentage-div {
+  margin: 2rem 0;
+}
+.tip-percentage-div p {
+  margin: 0 0 1rem;
+}
+
+.percentage-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  
+}
+
+.percentage-button, .custom-percentage {
+  padding: .5rem 0;
+  font: inherit;
+  border: 2px solid var(--WHITE);
+  border-radius: var(--BUTTONS-BORDER-RADIUS);
+}
+
+.percentage-button {
+  background-color: var(--VERY-DARK-CYAN);
+  color: var(--WHITE);
+  transition: background-color var(--HOVER-TRANSITION), color var(--HOVER-TRANSITION);
+}
+
+.percentage-button-active {
+  background-color: var(--STRONG-CYAN);
+  color: var(--VERY-DARK-CYAN);
+  transition: background-color var(--HOVER-TRANSITION);
+}
+
+.custom-percentage {
+  text-align: center;
+  background-color: var(--VERY-LIGHT-GRAYISH-CYAN);
+  width: 100%;
+  transition: border var(--HOVER-TRANSITION);
+}
+
+.input-bill-field, .number-of-people-field {
+  width: 100%;
+  padding: .5rem;
+  margin: 1rem 0;
+  border-radius: var(--BUTTONS-BORDER-RADIUS);
+  border: 2px solid var(--WHITE);
+  background-color: var(--VERY-LIGHT-GRAYISH-CYAN);
+  font-family: var(--FONT-FAMILY);
+  font-size: var(--FONT-SIZE);
+  color: var(--VERY-DARK-CYAN);
+  transition: border var(--HOVER-TRANSITION);
+}
+
+.input-bill-field::placeholder, .number-of-people-field::placeholder {
+  font-family: var(--FONT-FAMILY);
+  font-size: var(--FONT-SIZE);
+  color: var(--VERY-DARK-CYAN);
+  
+}
+
+/* STYLES POSITION FOR PLACEHOLDER ICONS ON THE INPUTS */
+.tip-input-div label, .number-of-people-div label {
+  position: relative;
+
+}
+
+.dollar-icon, .person-icon {
+  position: absolute;
+  left: 1rem;
+  top: .7rem;
+}
+
+.number-of-people-title-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* RESULT CONTAINER STYLES */
+
+.result-container {
+  background-color: var(--VERY-DARK-CYAN);
+  border-radius: var(--MAIN-BORDER-RADIUS);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  
+}
+
+.tip-amount-div, .total-amount-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2rem;
+}
+
+.amount-per-person {
+  font-size: .8rem;
+  color: var(--DARK-GRAYISH-CYAN);
+}
+
+.total-bill {
+  font-size: 3rem;
+  color: var(--STRONG-CYAN);
+}
+
+.reset-button-div {
+  background-color: var(--WHITE);
+  border-radius: var(--BUTTONS-BORDER-RADIUS);
+}
+
+.reset-button {
+  width: 100%;
+  padding: .5rem;
+  background-color: var(--STRONG-CYAN);
+  color: var(--VERY-DARK-CYAN);
+  border-radius: var(--BUTTONS-BORDER-RADIUS);
+  border: none;
+  font: inherit;
+  transition: background-color var(--HOVER-TRANSITION);
+}
+
+.tip-amount-title, .total-amount-title {
+  font-size: 1rem;
+}
+
+/* Error message for number of People input */
+.cant-be-zero-paragraph {
+  color: var(--ERROR-COLOR);
+}
+
+.number-of-people-error, .number-of-people-error:focus:active {
+  border: 2px solid var(--ERROR-COLOR); 
+}
+
+
+
+/* ----------- HOVER STYLES ----------- */
+
+/* INPUT HOVER STYLES */
+.input-bill-field:hover, .input-bill-field:focus:active,
+.number-of-people-field:hover, .number-of-people-field:focus:active,
+.custom-percentage:hover, .custom-percentage:focus:active {
+  border: 2px solid var(--STRONG-CYAN);
+  cursor: pointer;
+}
+
+/* BUTTONS HOVER STYLES */
+.percentage-button:hover {
+  background-color: var(--STRONG-CYAN);
+  cursor: pointer;
+}
+
+.reset-button:hover, .reset-button:focus {
+  /* opacity: .7; */
+  background-color: var(--BACKGROUND-BODY);
+  cursor: pointer;
+}
+/* END HOVER STYLES */
+
+
+
+/* ----------- MEDIA QUERIES ----------- */
+
+/* MEDIUM SIZE */
+@media (max-width: 800px) {
+
+  article {
+    grid-template-columns: 1fr;
+    margin: 2rem 0;
+    border-radius: var(--MAIN-BORDER-RADIUS) var(--MAIN-BORDER-RADIUS) 0 0;
+  }
+}
+
+/* SMALL SIZE */
+@media (max-width: 600px) {
+  .percentage-div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
