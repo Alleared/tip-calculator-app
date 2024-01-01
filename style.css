@@ -104,10 +104,15 @@ article {
 }
 
 .custom-percentage {
-  text-align: center;
   background-color: var(--VERY-LIGHT-GRAYISH-CYAN);
   width: 100%;
   transition: border var(--HOVER-TRANSITION);
+  text-align: center;
+  /* padding: .5rem; */
+}
+
+.custom-percentage::placeholder {
+  text-align: center;
 }
 
 .input-bill-field, .number-of-people-field {
@@ -121,6 +126,7 @@ article {
   font-size: var(--FONT-SIZE);
   color: var(--VERY-DARK-CYAN);
   transition: border var(--HOVER-TRANSITION);
+  text-align: right;
 }
 
 .input-bill-field::placeholder, .number-of-people-field::placeholder {
@@ -225,13 +231,12 @@ article {
   cursor: pointer;
 }
 
-.reset-button:hover, .reset-button:focus {
+.reset-button:hover {
   /* opacity: .7; */
   background-color: var(--BACKGROUND-BODY);
   cursor: pointer;
 }
 /* END HOVER STYLES */
-
 
 
 /* ----------- MEDIA QUERIES ----------- */
