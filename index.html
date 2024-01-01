@@ -31,7 +31,7 @@
           <p>Bill</p>
           <label for="input-bill">
             <img class="dollar-icon" src="images/icon-dollar.svg" alt="Dollar icon">
-            <input type="text" id="input-bill" placeholder="0" dir="RTL" class="js-input-bill input-bill-field" oninput="validateInput(this)">
+            <input type="text" id="input-bill" placeholder="0" class="js-input-bill input-bill-field" onkeyup="calculateBill(percent)" oninput="validateInput(this)">
           </label>
         </div>
         <div class="tip-percentage-div">
@@ -55,7 +55,7 @@
           </div>
           <label for="number-of-people-input">
             <img src="images/icon-person.svg" alt="Person Icon" class="person-icon">
-            <input type="text" placeholder="" value="1" id="number-of-people-input" dir="RTL" class="js-number-of-people number-of-people-field" oninput="validateInput(this)">
+            <input type="text" placeholder="0" id="number-of-people-input" class="js-number-of-people number-of-people-field" oninput="validateInput(this)" onkeyup="calculateBill(percent)">
           </label>
         </div>
       </div>
