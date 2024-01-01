@@ -3,14 +3,7 @@ function validateInput(input) {
 	input.value = input.value.replace(/[^0-9.]/g, "");
 }
 
-// CALCULATE CUSTOM PERCENTAGE
-function custom () {
-	let inputCustomPercentage = Number(document.querySelector(".js-custom-percentage").value);
-	percentageButtons.forEach((active) => {
-		active.classList.remove("percentage-button-active");
-	});
-	calculateBill(inputCustomPercentage);
-}
+let percent = 0; 
 
 // MAIN CALCULATION FUNCTION
 function calculateBill(percentageButton) {
@@ -19,8 +12,10 @@ function calculateBill(percentageButton) {
 	
 	let numberOfPeople = Number(document.querySelector(".js-number-of-people").value);
 
+	percent = percentageButton;
+
 	// Calculate the percentage of the number
-	let billButtonPercentage = (inputBill / 100) * percentageButton;
+	let billButtonPercentage = (inputBill / 100) * percent;
 	let totalBill = inputBill + billButtonPercentage;
 
 	let totalNumberOfPeople = totalBill / numberOfPeople;
@@ -57,7 +52,7 @@ function calculateBill(percentageButton) {
 		// Tip amount
 		document.querySelector(".js-tip-amount").innerHTML = `&dollar;${tipNumberOfPeople.toFixed(2)}`;
 	}
-	
+
 }
 
 
@@ -70,20 +65,34 @@ function activeButton(btn) {
 	});
 
 	btn.classList.add("percentage-button-active");
-	document.querySelector(".js-custom-percentage").value = '';
+	document.querySelector(".js-custom-percentage").value = "";
+}
+
+// CALCULATE CUSTOM PERCENTAGE
+function custom () { 
+	let inputCustomPercentage = Number(document.querySelector(".js-custom-percentage").value);
+
+	percentageButtons.forEach((active) => {
+		active.classList.remove("percentage-button-active");
+	});
+	calculateBill(inputCustomPercentage);
+		
 }
 
 // CLEAR ALL THE INPUTS AND CALCULATIONS
 function reset() {
 	document.querySelector(".js-input-bill").value = "";
-	document.querySelector(".number-of-people-field").value = 1;
+	document.querySelector(".number-of-people-field").value = "";
 	document.querySelector(".js-custom-percentage").value = "";
 	document.querySelector(".js-total-bill").innerHTML = `&dollar;0.00`;
 	document.querySelector(".js-tip-amount").innerHTML = `&dollar;0.00`;
 	document.querySelector('.cant-be-zero-paragraph').innerText = '';
 	document.querySelector(".number-of-people-field").classList.remove("number-of-people-error");
+	percent = 0;
 	percentageButtons.forEach((active) => {
 		active.classList.remove("percentage-button-active");
 	});
 }
+
+
 
